@@ -12,7 +12,7 @@ import entity.HelloWorld;
  * @author Jean-Aymeric Diet
  */
 public final class Model extends Observable implements IModel {
-
+	public static coordonnees[][] objects = new coordonnees[50][23];
 	/**
      * Gets the observable.
      *

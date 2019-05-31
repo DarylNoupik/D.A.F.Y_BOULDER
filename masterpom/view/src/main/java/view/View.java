@@ -1,5 +1,11 @@
 package view;
 
+import java.awt.HeadlessException;
+import java.sql.SQLException;
+
+import javax.swing.SwingUtilities;
+
+import contract.IModel;
 import contract.IView;
 
 /**
@@ -7,7 +13,7 @@ import contract.IView;
  *
  * @author Jean-Aymeric Diet
  */
-public final class View implements IView{
+public final class View implements IView,Runnable{
 
 	/** The frame. */
 	private ViewFrame viewFrame;
@@ -17,9 +23,12 @@ public final class View implements IView{
 	 *
 	 * @param model
 	 *          the model
+	 * @throws SQLException 
+	 * @throws HeadlessException 
 	 */
-	public View() {
-		this.viewFrame = new ViewFrame();
+	public View(final IModel model) throws HeadlessException, SQLException{
+		this.viewFrame = new ViewFrame(model);
+		SwingUtilities.invokeLater(this);		
 	}
 
 	public ViewFrame getViewFrame() {
@@ -34,6 +43,12 @@ public final class View implements IView{
 	public void printMessage(String message) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		this.viewFrame.setVisible(true);
 	}
 
 

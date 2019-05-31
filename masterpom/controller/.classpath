@@ -35,6 +35,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/MBEUNDJAL/Desktop/COURS/X1/PROJET UML Java/showboard-master.zip"/>
+	<classpathentry kind="src" path="/view"/>
+	<classpathentry kind="src" path="/model"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
